@@ -51,7 +51,7 @@ class activemq::config (
     }
     file { "/etc/activemq/instances-enabled/${instance}/log4j.properties":
       ensure => present,
-      source => puppet:///modules/activemq/log4j.properties,
+      source => "puppet:///modules/activemq/log4j.properties",
     }
   }
   else {
