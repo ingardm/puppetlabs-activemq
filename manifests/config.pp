@@ -49,6 +49,10 @@ class activemq::config (
       ensure => link,
       target => $available,
     }
+    file { "/etc/activemq/instances-enabled/${instance}/log4j.properties":
+      ensure => present,
+      source => puppet:///modules/activemq/log4j.properties
+    }
   }
   else {
     validate_re($path, '^/')
